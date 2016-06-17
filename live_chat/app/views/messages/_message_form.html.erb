@@ -1,0 +1,16 @@
+<%=form_for [@chatroom, @message] do |f|%>
+  <div>
+    <%= f.label :username%>:
+    <%= f.text_field :username%>
+  </div>
+
+  <div>
+    <%= f.label :body, "Message"%>:
+    <%= f.text_area :body%>
+  </div>
+
+  <div>
+    <%= f.hidden_field :chatroom_id, value: @chatroom.id %>
+    <%= f.submit "send"%>
+  </div>
+<%end%>
